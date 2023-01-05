@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.ReportActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvAddLaporan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Tambah Laporan"
+            android:textAlignment="center"
+            android:textColor="@color/purple"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Nama"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans"
+                android:background="@drawable/coloumn_login"
+                android:hint="Masukkan nama anda..." />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvKerusakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Kerusakan"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etKerusakan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans"
+                android:background="@drawable/coloumn_login"
+                android:hint="Masukkan nama sarana/prasarana yang rusak...." />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvLokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Masukkan lokasi...."
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etLokasi"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/coloumn_login"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans"
+                android:hint="Masukkan lokasi" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_dampak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_sans"
+        android:text="Apakah ada dampak dari kerusakan?"
+        android:textColor="@color/text_grey"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Ya"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Tidak"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCatatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunito_sans"
+            android:text="Catatan (Opsional)"
+            android:textColor="@color/text_grey"
+            android:textSize="12sp" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/etCatatan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nunito_sans"
+                android:background="@drawable/coloumn_login"
+                android:hint="Masukkan catatan...." />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnKirim"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Kirim"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
