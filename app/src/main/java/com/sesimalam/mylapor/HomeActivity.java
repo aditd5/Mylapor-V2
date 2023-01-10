@@ -27,23 +27,23 @@ public class HomeActivity extends AppCompatActivity {
         tvProfile = findViewById(R.id.tvProfile);
 
         cvLaporan.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
-            startActivity(intent);
+            Intent homeIntent = new Intent(HomeActivity.this, ReportActivity.class);
+            startActivity(homeIntent);
         });
 
         cvHistory.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, HistoryActivity.class);
-            startActivity(intent);
+            Intent homeIntent = new Intent(HomeActivity.this, HistoryActivity.class);
+            startActivity(homeIntent);
         });
 
         profile.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
+            Intent homeIntent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(homeIntent);
         });
 
         tvProfile.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-            startActivity(intent);
+            Intent homeIntent = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(homeIntent);
         });
     }
 }

@@ -7,18 +7,24 @@ import androidx.room.Room;
 
 import static com.sesimalam.mylapor.MyLapor.db;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.sesimalam.mylapor.activity.RecycleViewUserAdapter;
+import com.sesimalam.mylapor.activity.ReportActivity;
 import com.sesimalam.mylapor.room.AppDatabase;
 import com.sesimalam.mylapor.room.Laporan;
+import com.sesimalam.mylapor.room.LaporanDao;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryActivity extends AppCompatActivity {
 
+    private ImageView btnback;
     RecyclerView recyclerView;
     RecycleViewUserAdapter recycleAdapter;
     List<Laporan> listLaporans = new ArrayList<>();
@@ -32,6 +38,13 @@ public class HistoryActivity extends AppCompatActivity {
         fetchDataFromRoom();
         initRecycleView();
         setAdapter();
+
+        btnback = findViewById(R.id.btnBack);
+
+        btnback.setOnClickListener(view -> {
+            Intent intent = new Intent(HistoryActivity.this, HomeActivity.class);
+            startActivity(intent);
+        });
     }
     private void fetchDataFromRoom() {
         db = Room.databaseBuilder(getApplicationContext(),

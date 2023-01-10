@@ -24,7 +24,7 @@ public class Laporan {
         return id;
     }
 
-    public void setId(int uid) {
+    public void setId(int id) {
         this.id = id;
     }
 

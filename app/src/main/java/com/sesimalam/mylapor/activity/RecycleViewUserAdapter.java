@@ -29,7 +29,7 @@ public class RecycleViewUserAdapter extends RecyclerView.Adapter<RecycleViewUser
             tvNama = itemView.findViewById(R.id.tvNama);
             tvKerusakan = itemView.findViewById(R.id.tvKerusakan);
             tvLokasi = itemView.findViewById(R.id.tvLokasi);
-            tvCatatan = itemView.findViewById(R.id.etCatatan);
+            tvCatatan = itemView.findViewById(R.id.tvCatatan);
         }
     }
 
@@ -59,6 +59,7 @@ public class RecycleViewUserAdapter extends RecyclerView.Adapter<RecycleViewUser
 
     @Override
     public int getItemCount() {
+
         return myList.size();
     }
 }

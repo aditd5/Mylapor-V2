@@ -8,15 +8,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.sesimalam.mylapor.HistoryActivity;
+import com.sesimalam.mylapor.HomeActivity;
 import com.sesimalam.mylapor.R;
 import com.sesimalam.mylapor.room.Laporan;
 
 public class ReportActivity extends AppCompatActivity {
 
     private Button insertData;
+    private ImageView btnBack;
     private EditText etNama;
     private EditText etKerusakan;
     private EditText etLokasi;
@@ -28,15 +31,22 @@ public class ReportActivity extends AppCompatActivity {
         setContentView(R.layout.activity_report);
 
         insertData = findViewById(R.id.btnKirim);
+        btnBack = findViewById(R.id.btnBack);
         etNama = findViewById(R.id.etNama);
         etKerusakan = findViewById(R.id.etKerusakan);
         etLokasi = findViewById(R.id.etLokasi);
         etCatatan = findViewById(R.id.etCatatan);
 
+        btnBack.setOnClickListener(view -> {
+            Intent intent = new Intent(ReportActivity.this, HomeActivity.class);
+            startActivity(intent);
+        });
+
+
         insertData.setOnClickListener(view -> {
             if
             (!etNama.getText().toString().isEmpty() && !etKerusakan.getText().toString().isEmpty()&&
-                    !etLokasi.getText().toString().isEmpty() && !etCatatan.getText().toString().isEmpty()) {
+                    !etLokasi.getText().toString().isEmpty()) {
 
                 laporan = new Laporan();
                 laporan.setNama(etNama.getText().toString());
