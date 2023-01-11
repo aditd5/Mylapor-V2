@@ -14,6 +14,8 @@ public interface LaporanDao {
     @Query("SELECT * FROM laporan")
     List<Laporan> getAll();
 
+    //@Query("SELECT * FROM laporan WHERE email LIKE :email");
+
     @Insert
     void insertAll(Laporan laporan);
 

@@ -53,6 +53,7 @@
                 android:id="@+id/etNama"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:paddingLeft="10dp"
                 android:textSize="12sp"
                 android:fontFamily="@font/nunito_sans"
                 android:background="@drawable/coloumn_login"
@@ -76,6 +77,7 @@
 
             <EditText
                 android:id="@+id/etKerusakan"
+                android:paddingLeft="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textSize="12sp"
@@ -100,18 +102,13 @@
             <EditText
                 android:id="@+id/etLokasi"
                 android:layout_width="match_parent"
+                android:paddingLeft="10dp"
                 android:layout_height="40dp"
                 android:background="@drawable/coloumn_login"
                 android:textSize="12sp"
                 android:fontFamily="@font/nunito_sans"
                 android:hint="Masukkan lokasi" />
         </FrameLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvCatatan"
@@ -131,6 +128,7 @@
             <EditText
                 android:id="@+id/etCatatan"
                 android:layout_width="match_parent"
+                android:paddingLeft="10dp"
                 android:layout_height="40dp"
                 android:textSize="12sp"
                 android:fontFamily="@font/nunito_sans"

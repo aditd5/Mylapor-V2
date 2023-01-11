@@ -46,7 +46,7 @@ public class PreferencesHelper {
     }
 
     public String getPassword() {
-        return sharedPreferences.getString("password", "example@example.com");
+        return sharedPreferences.getString("password", null);
     }
 
 }
