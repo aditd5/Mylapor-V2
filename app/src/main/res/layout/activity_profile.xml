@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Kepin Lenon"
+        android:text="David Luiz"
         android:textAlignment="center"
         android:textColor="@color/purple"
         android:textSize="16sp"/>
@@ -56,7 +56,7 @@
         android:layout_marginTop="35dp"
         android:background="@drawable/rectangle_bg"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Kepin Lenon"
+        android:text="David Luiz"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
         android:textSize="12sp" />
@@ -68,7 +68,7 @@
         android:layout_marginTop="35dp"
         android:background="@drawable/rectangle_bg"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="kepinlenon@gmail.com"
+        android:text="davidluiz@gmail.com"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
         android:textSize="12sp" />
