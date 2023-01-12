@@ -36,7 +36,7 @@
         android:text="David Luiz"
         android:textAlignment="center"
         android:textColor="@color/purple"
-        android:textSize="16sp"/>
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -47,43 +47,43 @@
         android:text="Special Region of Yogyakarta"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:background="@drawable/rectangle_bg"
         android:fontFamily="@font/nunito_sans_bold"
         android:text="David Luiz"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:background="@drawable/rectangle_bg"
         android:fontFamily="@font/nunito_sans_bold"
         android:text="davidluiz@gmail.com"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:background="@drawable/rectangle_bg"
         android:fontFamily="@font/nunito_sans_bold"
         android:text="089564689021"
         android:textAlignment="center"
         android:textColor="@color/text_grey"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btnLogout"
