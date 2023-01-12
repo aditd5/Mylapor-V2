@@ -1,5 +1,6 @@
 package com.sesimalam.mylapor.room;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -14,7 +15,17 @@ public interface LaporanDao {
     @Query("SELECT * FROM laporan")
     List<Laporan> getAll();
 
-    //@Query("SELECT * FROM laporan WHERE email LIKE :email");
+    @Query("SELECT * FROM laporan")
+    LiveData<List<Laporan>> dataLaporan();
+
+    @Query("SELECT * FROM laporan WHERE id LIKE :laporanID LIMIT 1")
+    Laporan findByID(int laporanID);
+
+   // @Query("SELECT * FROM laporan WHERE email LIKE :email ")
+   // Laporan findByName(String email);
+
+  //  @Query("SELECT * FROM laporan WHERE password LIKE :password ")
+   // Laporan findByName(String password);
 
     @Insert
     void insertAll(Laporan laporan);

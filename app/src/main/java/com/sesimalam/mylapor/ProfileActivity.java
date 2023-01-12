@@ -26,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         btnLogout.setOnClickListener(view -> {
             preferencesHelper.setLogin(false);
+
             startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
 
             Toast.makeText(getApplicationContext(),"Anda telah Logout",

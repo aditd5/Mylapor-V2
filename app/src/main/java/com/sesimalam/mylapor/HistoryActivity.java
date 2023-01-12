@@ -7,6 +7,8 @@ import androidx.room.Room;
 
 import static com.sesimalam.mylapor.MyLapor.db;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.sesimalam.mylapor.activity.ReportActivity;
 import com.sesimalam.mylapor.room.AppDatabase;
 import com.sesimalam.mylapor.room.Laporan;
 import com.sesimalam.mylapor.room.LaporanDao;
+import com.sesimalam.mylapor.util.OnClickAdapterItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +69,25 @@ public class HistoryActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
         recycleAdapter = new RecycleViewUserAdapter(this,listLaporans);
+        recycleAdapter.OnClickAdapterItem(new OnClickAdapterItem() {
+            @Override
+            public void clickItem(int id, int position) {
+                new AlertDialog.Builder(HistoryActivity.this)
+                        .setTitle("Hapus Data")
+                        .setMessage("Anda yakin ingin menghapus data ini?")
+                        .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                listLaporans.remove(position);
+                                recycleAdapter.notifyItemChanged(position);
+                                db.userDao().deleteUsers(db.userDao().findByID(id));
+                            }
+                        })
+                        .setNegativeButton(android.R.string.no, null)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+            }
+        });
     }
 
     private void setAdapter() {

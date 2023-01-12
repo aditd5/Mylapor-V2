@@ -24,6 +24,9 @@ public class ReportActivity extends AppCompatActivity {
     private EditText etKerusakan;
     private EditText etLokasi;
     private EditText etCatatan;
+    private String status;
+    private int id;
+    public final static String TAG_DATA_LAPORAN = "data_laporan";
     Laporan laporan;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,22 @@ public class ReportActivity extends AppCompatActivity {
         etLokasi = findViewById(R.id.etLokasi);
         etCatatan = findViewById(R.id.etCatatan);
 
+        if (getIntent() != null) {
+            int id = getIntent().getIntExtra(TAG_DATA_LAPORAN, 0);
+            laporan = db.userDao().findByID(id);
+        }
+        if (laporan == null) {
+            laporan = new Laporan();
+        }
+        if (getIntent() != null) {
+            id = getIntent().getIntExtra("id", 0);
+            laporan = db.userDao().findByID(id);
+        }
+        if (laporan == null) {
+            laporan = new Laporan();
+        }
+
+
         btnBack.setOnClickListener(view -> {
             Intent intent = new Intent(ReportActivity.this, HomeActivity.class);
             startActivity(intent);
@@ -46,18 +65,22 @@ public class ReportActivity extends AppCompatActivity {
         insertData.setOnClickListener(view -> {
             if
             (!etNama.getText().toString().isEmpty() && !etKerusakan.getText().toString().isEmpty()&&
-                    !etLokasi.getText().toString().isEmpty()) {
+                    !etLokasi.getText().toString().isEmpty()&& !etCatatan.getText().toString().isEmpty())  {
 
-                laporan = new Laporan();
                 laporan.setNama(etNama.getText().toString());
                 laporan.setKerusakan(etKerusakan.getText().toString());
                 laporan.setLokasi(etLokasi.getText().toString());
                 laporan.setCatatan(etCatatan.getText().toString());
 
-                db.userDao().insertAll(laporan);
+                if (laporan.getId() > 0) {
+                    laporan.setId(laporan.getId());
+                    db.userDao().update(laporan);
+                } else {
+                    db.userDao().insertAll(laporan);
 
-                Toast.makeText(getApplicationContext(), "Laporan Anda Telah Diterima",
-                        Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Laporan Anda Telah Diterima",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 startActivity(new Intent(ReportActivity.this, HistoryActivity.class));
             } else {
@@ -65,5 +88,17 @@ public class ReportActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (laporan.getId() > 0) {
+            etNama.setText(laporan.getNama());
+            etKerusakan.setText(laporan.getKerusakan());
+            etLokasi.setText(laporan.getLokasi());
+            etCatatan.setText(laporan.getCatatan());
+            insertData.setText("Update");
+        }
     }
 }

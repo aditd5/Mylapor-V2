@@ -20,6 +20,12 @@ public class Laporan {
     @ColumnInfo(name = "catatan")
     String catatan;
 
+    @ColumnInfo(name = "email")
+    String email;
+
+    @ColumnInfo(name = "password")
+    String password;
+
     public int getId() {
         return id;
     }
@@ -58,5 +64,19 @@ public class Laporan {
 
     public void setCatatan(String catatan) {
         this.catatan = catatan;
+    }
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

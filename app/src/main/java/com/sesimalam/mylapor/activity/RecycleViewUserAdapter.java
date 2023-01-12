@@ -1,6 +1,7 @@
 package com.sesimalam.mylapor.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.sesimalam.mylapor.R;
 import com.sesimalam.mylapor.room.Laporan;
+import com.sesimalam.mylapor.util.OnClickAdapterItem;
 
 import java.util.List;
 
 public class RecycleViewUserAdapter extends RecyclerView.Adapter<RecycleViewUserAdapter.MyViewHolder> {
     private Context mContext;
     private List<Laporan> myList;
+    private OnClickAdapterItem onClickAdapterItem;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tvNama;
@@ -38,6 +41,9 @@ public class RecycleViewUserAdapter extends RecyclerView.Adapter<RecycleViewUser
         this.myList = albumList;
     }
 
+    public void OnClickAdapterItem(OnClickAdapterItem onClickAdapterItem) {
+        this.onClickAdapterItem = onClickAdapterItem;
+    }
 
     @NonNull
     @Override
@@ -54,6 +60,26 @@ public class RecycleViewUserAdapter extends RecyclerView.Adapter<RecycleViewUser
         myViewHolder.tvKerusakan.setText(album.getKerusakan());
         myViewHolder.tvLokasi.setText(album.getLokasi());
         myViewHolder.tvCatatan.setText(album.getCatatan());
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, ReportActivity.class);
+                intent.putExtra("status", "edit");
+                intent.putExtra("id", album.getId());
+                mContext.startActivity(intent);
+            }
+        });
+
+        myViewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (onClickAdapterItem != null) {
+                    onClickAdapterItem.clickItem(album.getId(), i);
+                }
+                return false;
+            }
+        });
 
     }
 
